@@ -7,11 +7,9 @@ steps:
   args: [
     'run', 'deploy', 'backend-service',
     '--image', 'gcr.io/$PROJECT_ID/backend:$SHORT_SHA',
-    '--region', 'us-central1', # Sesuaikan region sesuai kebutuhan
+    '--region', 'us-central1',
     '--platform', 'managed',
     '--allow-unauthenticated'
   ]
-substitutions:
-  _SERVICE_NAME: 'backend-service'
-  _REGION: 'us-central1'
-timeout: 1200s
+options:
+  logging: CLOUD_LOGGING_ONLY # Menyimpan log hanya di Cloud Logging
