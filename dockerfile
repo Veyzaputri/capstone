@@ -1,5 +1,5 @@
 # Gunakan image dasar Node.js yang sesuai (sesuaikan versi dengan yang Anda perlukan)
-FROM node:18
+FROM node:20
 
 # Set working directory dalam container
 WORKDIR /usr/index
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose port aplikasi
-EXPOSE 3000
+EXPOSE 8080
 
 # Tentukan perintah yang dijalankan saat container dimulai
 CMD ["npm", "start"]
